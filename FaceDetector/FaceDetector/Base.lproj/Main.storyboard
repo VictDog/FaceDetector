@@ -1,26 +1,150 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XmC-VN-1VC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="lCC-wr-9tn">
+            <objects>
+                <tabBarController id="XmC-VN-1VC" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="cpZ-j9-8K8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="R4k-sK-Ajs" kind="relationship" relationship="viewControllers" id="RYY-cf-Nr7"/>
+                        <segue destination="2f2-xr-03r" kind="relationship" relationship="viewControllers" id="viv-Yh-hYj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xlG-Uw-pA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-838" y="-348"/>
+        </scene>
+        <!--Photo-->
+        <scene sceneID="JIC-wB-p2D">
+            <objects>
+                <navigationController id="R4k-sK-Ajs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Photo" image="photo" id="gdS-SL-XFv"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XV2-sC-a4F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Idd-dJ-he8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C6N-1e-mWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="-678"/>
+        </scene>
+        <!--Photo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="aS7-Ee-A9p"/>
+                        <viewControllerLayoutGuide type="bottom" id="QFO-R0-PeL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qjR-ZY-lwc">
+                                <frame key="frameInset" minY="104" width="375" height="514"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muH-ZN-oS6">
+                                <frame key="frameInset" minY="64" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Photo" id="nFl-Lw-JsC">
+                        <barButtonItem key="leftBarButtonItem" title="上一张" id="mLD-Lb-8W9">
+                            <connections>
+                                <action selector="theLastPicture:" destination="BYZ-38-t0r" id="1Ba-34-GP0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="下一张" id="AK6-9M-hl7">
+                            <connections>
+                                <action selector="theNextPicture:" destination="BYZ-38-t0r" id="1qA-0i-k9M"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="qjR-ZY-lwc" id="np2-9p-BSt"/>
+                        <outlet property="label" destination="muH-ZN-oS6" id="n6w-zt-tjE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="738" y="-679"/>
+        </scene>
+        <!--Carema-->
+        <scene sceneID="rc7-nW-9yi">
+            <objects>
+                <navigationController id="2f2-xr-03r" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Carema" image="camera" id="wHs-bm-zfJ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hq6-6r-rGr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ifl-mp-J92" kind="relationship" relationship="rootViewController" id="Efp-h4-R1R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MFA-wK-r5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="-10"/>
+        </scene>
+        <!--Carema-->
+        <scene sceneID="lrf-Jg-CZI">
+            <objects>
+                <viewController id="ifl-mp-J92" customClass="CameraController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hPt-lb-6xf"/>
+                        <viewControllerLayoutGuide type="bottom" id="SFI-7O-IIQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VEl-qk-9Zc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AnP-Dt-rJJ"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AnP-Dt-rJJ" firstAttribute="top" secondItem="hPt-lb-6xf" secondAttribute="bottom" id="AwS-Pa-CDz"/>
+                            <constraint firstAttribute="trailing" secondItem="AnP-Dt-rJJ" secondAttribute="trailing" id="Rko-IK-ol9"/>
+                            <constraint firstItem="AnP-Dt-rJJ" firstAttribute="leading" secondItem="VEl-qk-9Zc" secondAttribute="leading" id="emC-zf-9df"/>
+                            <constraint firstItem="SFI-7O-IIQ" firstAttribute="top" secondItem="AnP-Dt-rJJ" secondAttribute="bottom" id="eqt-vT-EAv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Carema" id="ZdP-YX-TMj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="3LF-ee-w4I">
+                            <connections>
+                                <action selector="openCarema:" destination="ifl-mp-J92" id="c9g-2N-RnV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="AnP-Dt-rJJ" id="AWd-fE-XHt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X63-gN-DLM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736.80000000000007" y="-10.344827586206897"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="27" height="23"/>
+        <image name="photo" width="24" height="24"/>
+    </resources>
 </document>

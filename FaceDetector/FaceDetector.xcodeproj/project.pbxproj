@@ -13,6 +13,7 @@
 		04E55FF31E09037900F97055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E55FF11E09037900F97055 /* Main.storyboard */; };
 		04E55FF51E09037900F97055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E55FF41E09037900F97055 /* Assets.xcassets */; };
 		04E55FF81E09037900F97055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E55FF61E09037900F97055 /* LaunchScreen.storyboard */; };
+		04E560011E0942FD00F97055 /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E560001E0942FD00F97055 /* CameraController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		04E55FF41E09037900F97055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04E55FF71E09037900F97055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04E55FF91E09037A00F97055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E55FFF1E0942FD00F97055 /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
+		04E560001E0942FD00F97055 /* CameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				04E55FEC1E09037900F97055 /* AppDelegate.m */,
 				04E55FEE1E09037900F97055 /* ViewController.h */,
 				04E55FEF1E09037900F97055 /* ViewController.m */,
+				04E55FFF1E0942FD00F97055 /* CameraController.h */,
+				04E560001E0942FD00F97055 /* CameraController.m */,
 				04E55FF11E09037900F97055 /* Main.storyboard */,
 				04E55FF41E09037900F97055 /* Assets.xcassets */,
 				04E55FF61E09037900F97055 /* LaunchScreen.storyboard */,
@@ -110,6 +115,7 @@
 				TargetAttributes = {
 					04E55FE41E09037900F97055 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 3U4X56567F;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -152,6 +158,7 @@
 			files = (
 				04E55FF01E09037900F97055 /* ViewController.m in Sources */,
 				04E55FED1E09037900F97055 /* AppDelegate.m in Sources */,
+				04E560011E0942FD00F97055 /* CameraController.m in Sources */,
 				04E55FEA1E09037900F97055 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,7 +277,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3U4X56567F;
 				INFOPLIST_FILE = FaceDetector/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YY.FaceDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -281,7 +290,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3U4X56567F;
 				INFOPLIST_FILE = FaceDetector/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YY.FaceDetector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
