@@ -9,10 +9,13 @@
 #import "ViewController.h"
 #import <CoreImage/CoreImage.h>
 
+#define imageName [NSString stringWithFormat:@"face-%d", _imageTag]
+
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (assign, nonatomic) int imageTag;
+@property (weak, nonatomic)   IBOutlet UILabel *label;
+@property (weak, nonatomic)   IBOutlet UIImageView *imageView;
+@property (nonatomic, assign) int imageTag;
+
 @end
 
 @implementation ViewController
@@ -20,10 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    self.imageView.image = [UIImage imageNamed:@"face-1"];
     self.imageTag = 1;
-    [self faceDetectWithImage:[UIImage imageNamed:@"face-1"]];
+    self.imageView.image = [UIImage imageNamed:imageName];
+    [self faceDetectWithImage:[UIImage imageNamed:imageName]];
 }
 
 
@@ -43,9 +45,8 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
     }
-    self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"face-%d", _imageTag]];
-    
-    [self faceDetectWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"face-%d", _imageTag]]];
+    self.imageView.image = [UIImage imageNamed:imageName];
+    [self faceDetectWithImage:[UIImage imageNamed:imageName]];
 }
 
 #pragma mark - 下一张图片
@@ -59,9 +60,10 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
     }
-    self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"face-%d", _imageTag]];
     
-    [self faceDetectWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"face-%d", _imageTag]]];
+    self.imageView.image = [UIImage imageNamed:imageName];
+    
+    [self faceDetectWithImage:[UIImage imageNamed:imageName]];
 }
 
 #pragma mark - 识别人脸
